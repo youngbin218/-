@@ -1,6 +1,6 @@
 from selenium.webdriver import Firefox, FirefoxOptions
 
-url = "http://www.naver.com/"
+url = "http://www.naver.com"
 
 options = FirefoxOptions()
 options.add_argument('-headless')
