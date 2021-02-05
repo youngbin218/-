@@ -2,8 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 
-USER = "youngbin218"
-PASS = "rldudqls02"
+USER = "아이디"
+PASS = "비밀번호"
 
 session = requests.session()
 
