@@ -30,15 +30,17 @@ for result in results:
     # 전일대비 가격 변화
     change_text = em[0].find("span", "ico")
     price = em[0].find("span", "blind")
-
+    
     # 가격 변화 % 표기
     change_mark = em[1].find("span", "ico")
     percent = em[1].find("span", "blind")
 
     # 출력
     print(change_text.string, price.string)
-    print(change_mark.string, end='')
+    if change_mark != None:
+        print(change_mark.string, end='')
     print(percent.string, end='')
     print("%")
     print('''''')
     time.sleep(1)
+
