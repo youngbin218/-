@@ -3,7 +3,7 @@ import json
 
 apikey = "da14badfe65929ca4f2f0b1843d95d25"
 
-cities = ["Seoul,KR", "Tokyo,JP", "New York,US"]
+cities = ["Seoul,KR", "Tokyo,JP", "New York,US", "Beijing,CN"]
 
 api = "http://api.openweathermap.org/data/2.5/weather?q={city}&APPID={key}"
 
