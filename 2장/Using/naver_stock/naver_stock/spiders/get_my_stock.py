@@ -2,8 +2,8 @@ import scrapy
 from ..selenium_middleware import *
 
 # 네이버 아이디, 비밀번호 지정
-ID = "rldudqls02"
-PW = "dufrhdgkwk!"
+ID = "아이디"
+PW = "비밀번호"
 
 class GetMyStockSpider(scrapy.Spider):
     name = 'get_my_stock'
