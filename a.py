@@ -6,6 +6,7 @@ start_date = input('Enter the start date you want to check the commit of members
 end_date = input('Enter the end date you want to check the commit of members : ')
 not_commit_cnt = 0
 members = ["lCan37", "soline013", "Bisu-tjdgus", "wjdwns", "Hayeon-Lee", "yeilin-dpfls", "gPdnjs", "KangDaegyeom", "youngbin218", "dn5772", "yuris99"]
+# change list to dictionary
 
 url = "https://github.com"
 for i in range(0,11):
