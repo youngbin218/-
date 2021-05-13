@@ -6,6 +6,7 @@ start_date = input('Enter the start date you want to check the commit of members
 end_date = input('Enter the end date you want to check the commit of members : ')
 not_commit_cnt = 0
 members = ["lCan37", "soline013", "Bisu-tjdgus", "wjdwns", "Hayeon-Lee", "yeilin-dpfls", "gPdnjs", "KangDaegyeom", "youngbin218", "dn5772", "yuris99"]
+dict = {"lCan37" : "지석훈", "soline013" : "심현솔", "Bisu-tjdgus" : "조성현", "wjdwns" : "박정준", "Hayeon-Lee" : "이하연", "yeilin-dpfls" : "최예린", "gPdnjs" : "신혜원", "KangDaegyeom" : "강대겸", "youngbin218" : "기영빈", "dn5772", "yuris99" : "홍지훈"}
 
 url = "https://github.com"
 for i in range(0,11):
