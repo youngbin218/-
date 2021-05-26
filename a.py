@@ -5,11 +5,12 @@ print('When you enter the date -> 2021-04-01 like this')
 start_date = input('Enter the start date you want to check the commit of members : ')
 end_date = input('Enter the end date you want to check the commit of members : ')
 not_commit_cnt = 0
-members = {"lCan37" : "지석훈", "soline013" : "심현솔", "Bisu-tjdgus" : "조성현", "wjdwns" : "박정준", "Hayeon-Lee" : "이하연", "yeilin-dpfls" : "최예린", "gPdnjs" : "신혜원", "KangDaegyeom" : "강대겸", "youngbin218" : "기영빈", "dn5772", "yuris99" : "홍지훈"}
+members_id = ["lCan37", "soline013", "Bisu-tjdgus", "wjdwns", "Hayeon-Lee", "yeilin-dpfls", "gPdnjs", "KangDaegyeom", "youngbin218", "dn5772", "yuris99"]
+members_name = ["지석훈", "심현솔", "조성현", "박정준", "이하연", "최예린", "신혜원", "강대겸", "기영빈", "신대니", "홍지훈"];
 
 url = "https://github.com"
 for i in range(0,11):
-    member_url = url + "/" + members[i]
+    member_url = url + "/" + members_id[i]
     res = urllib.request.urlopen(member_url)
     soup = BeautifulSoup(res, "html.parser")
 
@@ -30,5 +31,5 @@ for i in range(0,11):
         member_price = 2500 * 2 ** (not_commit_cnt - 2)
     elif not_commit_cnt >= 7:
         member_price = 50000
-    print(members[i], ' No commit this month : ', not_commit_cnt, ' Your penalty... : ', member_price)
+    print(members_name[i], ' No commit this month : ', not_commit_cnt, ' Your penalty... : ', member_price)
     not_commit_cnt = 0
