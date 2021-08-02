@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route('/check',methods=['POST'])
 def check(start_date=None, end_date=None, cnt=None, penalty=None, git_id=None):
     if request.method != 'POST' and start_date == None and end_date == None:
-        return render_template('main1.html', start_date=start_date, end_date=end_date, cnt=cnt, penalty=penalty, git_id=git_id)
+        return render_template('main2.html', start_date=start_date, end_date=end_date, cnt=cnt, penalty=penalty, git_id=git_id)
     
     if request.method == 'POST':
         start_date = request.form['start_date']
@@ -49,7 +49,7 @@ def check(start_date=None, end_date=None, cnt=None, penalty=None, git_id=None):
         penalty = None
         git_id = None
         
-    return render_template('main1.html', start_date=start_date, end_date=end_date, cnt=cnt, penalty=penalty, git_id=git_id)
+    return render_template('main2.html', start_date=start_date, end_date=end_date, cnt=cnt, penalty=penalty, git_id=git_id)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port='5000', threaded=True)
