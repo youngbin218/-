@@ -52,4 +52,6 @@ def check(start_date=None, end_date=None, cnt=None, penalty=None, git_id=None):
     return render_template('main2.html', start_date=start_date, end_date=end_date, cnt=cnt, penalty=penalty, git_id=git_id)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port='5000', threaded=True)
+    ssl_context = ssl.SSLContext(ssl.PROTOCOL_TLS)
+    ssl_context.load_cert_chain(certfile='newcert.pem', keyfile='newkey.pem', password='')
+    app.run(host='0.0.0.0', port='5000', threaded=True, ssl_context=ssl_context)
