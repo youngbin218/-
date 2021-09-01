@@ -2,6 +2,7 @@ import ssl
 import urllib.request
 from bs4 import BeautifulSoup
 from flask import Flask, render_template, redirect, request, url_for
+from datetime import datetime, timedelta
 
 members_id = ["lCan37", "soline013", "Bisu-tjdgus", "wjdwns", "Hayeon-Lee", "yeilin-dpfls", "gPdnjs", "KangDaegyeom", "youngbin218", "dn5772", "yuris99"]
 members_name = ["지석훈", "심현솔", "조성현", "박정준", "이하연", "최예린", "신혜원", "강대겸", "기영빈", "신대니", "홍지훈"]
@@ -21,6 +22,7 @@ def check(start_date=None, end_date=None, cnt=[], penalty=[], name=None):
         cnt = []
         penalty = []
         url = "https://github.com"
+        day = (datetime.today() - timedelta(1)).strftime("%Y-%m-%d")
         for i in range(0,11):
             not_commit_cnt = 0
             member_url = url + "/" + members_id[i]
@@ -29,11 +31,19 @@ def check(start_date=None, end_date=None, cnt=[], penalty=[], name=None):
 
             results = soup.select("div.position-relative svg g")
 
+            tmp = 0
             for result in results:
+                if tmp == 1:
+                    break
                 git_commit = result.select("rect")
-                if git_commit[0]["data-date"] <= end_date:
+                if git_commit[0]["data-date"] < end_date:
                     for j in range(1,6):
-                        if start_date <= git_commit[j]["data-date"] <= end_date:
+                        if git_commit[j]["data-date"] == day:
+                            if int(git_commit[j]["data-count"]) == 0:
+                                not_commit_cnt += 1
+                            tmp = 1
+                            break
+                        elif start_date <= git_commit[j]["data-date"] <= end_date:
                             if int(git_commit[j]["data-count"]) == 0:
                                 not_commit_cnt += 1
                         elif git_commit[j]["data-date"] > end_date:
@@ -42,9 +52,9 @@ def check(start_date=None, end_date=None, cnt=[], penalty=[], name=None):
                     break
                     
             member_price = 0
-            if 1 < not_commit_cnt <= 6:
-                member_price = 2500 * 2 ** (not_commit_cnt - 2)
-            elif not_commit_cnt >= 7:
+            if 3 < not_commit_cnt <= 8:
+                member_price = 2500 * 2 ** (not_commit_cnt - 4)
+            elif not_commit_cnt >= 9:
                 member_price = 50000
             
             cnt.append(not_commit_cnt)
