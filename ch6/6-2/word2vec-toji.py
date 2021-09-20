@@ -27,5 +27,5 @@ with open(gubun_file, "w", encoding="utf-8") as fp:
 
 data = word2vec.LineSentence(gubun_file)
 model = word2vec.Word2Vec(data, vector_size=200, window=10, hs=1, min_count=2, sg=1)
-model.save("toji_1.model")
+model.save("toji.model")
 print("ok")
