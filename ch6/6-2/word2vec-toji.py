@@ -22,7 +22,7 @@ for line in lines:
     print(rl)
 
 gubun_file = 'toji.gubun'
-with open(gubun_file, 'w', encoding='utf-8') as fp:
+with open(gubun_file, "w", encoding="utf-8") as fp:
     fp.write("\n".join(results))
 
 data = word2vec.LineSentence(gubun_file)
