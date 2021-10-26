@@ -4,9 +4,11 @@ from bs4 import BeautifulSoup
 from flask import Flask, render_template, redirect, request, url_for
 from datetime import datetime, timedelta
 
-members_id = ["lCan37", "soline013", "Bisu-tjdgus", "wjdwns", "Hayeon-Lee", "yeilin-dpfls", "gPdnjs", "KangDaegyeom", "youngbin218", "dn5772", "yuris99"]
-members_name = ["지석훈", "심현솔", "조성현", "박정준", "이하연", "최예린", "신혜원", "강대겸", "기영빈", "신대니", "홍지훈"]
-
+members_id = ["lCan37", "soline013", "Hayeon-Lee", "yeilin-dpfls", "gPdnjs", "KangDaegyeom", "youngbin218", "dn5772", "yuris99"]
+members_name = ["지석훈", "심현솔", "이하연", "최예린", "신혜원", "강대겸", "기영빈", "신대니", "홍지훈"]
+# "Bisu-tjdgus", "wjdwns"
+# "조성현", "박정준"
+                
 app = Flask(__name__)
 
 @app.route('/')
