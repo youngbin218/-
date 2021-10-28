@@ -1,3 +1,5 @@
+# Github 커밋 횟수 count
+
 import urllib.request
 from bs4 import BeautifulSoup
 from flask import Flask, render_template, redirect, request, url_for
