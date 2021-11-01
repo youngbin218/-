@@ -25,7 +25,7 @@ def check(start_date=None, end_date=None, cnt=[], penalty=[], name=None):
         penalty = []
         url = "https://github.com"
         day = (datetime.today() - timedelta(1)).strftime("%Y-%m-%d")
-        for i in range(0,11):
+        for i in range(0,9):
             not_commit_cnt = 0
             member_url = url + "/" + members_id[i]
             res = urllib.request.urlopen(member_url)
@@ -56,6 +56,8 @@ def check(start_date=None, end_date=None, cnt=[], penalty=[], name=None):
             member_price = 0
             if 3 < not_commit_cnt <= 8:
                 member_price = 2500 * 2 ** (not_commit_cnt - 4)
+            # if 5 < not_commit_cnt <= 10:
+                #member_price = 2500 * 2 ** (not_commit_cnt - 6)
             elif not_commit_cnt >= 9:
                 member_price = 50000
             
